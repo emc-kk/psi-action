@@ -14,3 +14,5 @@ jobs:
           url: "https://jake.partus.ch"
           threshold: 85
           strategy: mobile
+      - name: Output Message 
+        run: echo ${{ steps.create-message.outputs.result-message }}
