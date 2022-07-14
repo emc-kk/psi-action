@@ -18,7 +18,7 @@ const run = async () => {
     // Output a formatted report to the terminal
     console.log(`Running Page Speed Insights for ${url}`);
 
-    const output = await psi(url, {
+    const output = await psi.output(url, {
       ...(key ? {key} : undefined),
       ...(key ? undefined : {nokey: "true"}),
       strategy,
@@ -27,11 +27,7 @@ const run = async () => {
     });
 
 
-    const performance = output.data.lighthouseResult.categories.performance;
-    // core.setOutput("score", JSON.stringify(Object.keys(output.data.lighthouseResult).join(',')));
-    core.setOutput("score", JSON.stringify(output.data.lighthouseResult.audits));
-    const coreWebVitals = getCoreWebVitals(performance.auditRefs);
-    setCoreWebVitals(coreWebVitals);
+    core.setOutput("score", output);
   } catch (error) {
     core.setFailed(error.message);
   }
