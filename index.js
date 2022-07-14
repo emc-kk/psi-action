@@ -31,12 +31,13 @@ const run = async () => {
     setCoreWebVitals(coreWebVitals);
   } catch (error) {
     core.setFailed(error.message);
-    core.setOutput("message", String(error.score));
   }
 };
 
 const getCoreWebVitals = (refs) => {
   return refs.reduce((acc, ref, _) => {
+    console.log(ref);
+    console.log(acc);
     if (coreWebVitalsTypes.includes(ref.acronym))
       acc[ref.acronym] = ref.weight;
   }, {});
