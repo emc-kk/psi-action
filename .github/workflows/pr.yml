@@ -18,30 +18,8 @@ jobs:
         uses: mshick/add-pr-comment@v1
         with:
           message: |
-            **PSI Score: **
+            **PSI performance results: **
             `${{ steps.psi.outputs.score }}`
-
-
-            **[CoreWebVitals] FCP Score: **
-            `${{ steps.psi.outputs.fcp }}`
-
-            **[CoreWebVitals] TTI Score: **
-            `${{ steps.psi.outputs.tti }}`
-
-            **[CoreWebVitals] SI Score: **
-            `${{ steps.psi.outputs.si }}`
-
-            **[CoreWebVitals] TBT Score: **
-            `${{ steps.psi.outputs.tbt }}`
-
-            **[CoreWebVitals] LCP Score: **
-            `${{ steps.psi.outputs.lcp }}`
-
-            **[CoreWebVitals] CLS Score: **
-            `${{ steps.psi.outputs.cls }}`
-            
-            **[CoreWebVitals] FMP Score: **
-            `${{ steps.psi.outputs.fmp }}`
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false
