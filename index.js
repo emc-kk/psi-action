@@ -26,7 +26,7 @@ const run = async () => {
     console.log('Speed score:', output.data.lighthouseResult.categories.performance.score);
     console.log('Speed score test:', JSON.stringify(output.data.lighthouseResult));
 
-    core.setOutput("result-message", String(output.data.lighthouseResult.categories.performance.score));
+    core.setOutput("result-message", String(output.data.lighthouseResult.categories.performance));
   } catch (error) {
     core.setFailed(error.message);
     core.setOutput("result-message", String(error.message));
