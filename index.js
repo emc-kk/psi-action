@@ -24,8 +24,6 @@ const run = async () => {
       threshold
     });
 
-    console.log(output, "output");
-
     core.setOutput("score", output);
   } catch (error) {
     core.setFailed(error.message);
