@@ -14,8 +14,6 @@ jobs:
           url: "https://jake.partus.ch"
           threshold: 85
           strategy: mobile
-      - name: Output Message 
-        run: echo ${{ steps.psi.outputs.message }}
       - name: Comment PSI Outputs
         uses: mshick/add-pr-comment@v1
         with:
