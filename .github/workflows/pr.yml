@@ -17,7 +17,7 @@ jobs:
       - name: Outputting the performance results of a given URL
         uses: mshick/add-pr-comment@v1
         with:
-          score: |
+          message: |
             **PSI Score: **
             `${{ steps.psi.outputs.score }}`
             **[CoreWebVitals] FCP Score: **
