@@ -17,6 +17,7 @@ const run = async () => {
     const strategy = core.getInput("strategy") || "mobile";
     // Output a formatted report to the terminal
     console.log(`Running Page Speed Insights for ${url}`);
+
     const output = await psi(url, {
       ...(key ? {key} : undefined),
       ...(key ? undefined : {nokey: "true"}),
@@ -24,6 +25,7 @@ const run = async () => {
       format: "cli",
       threshold
     });
+
 
     const performance = output.data.lighthouseResult.categories.performance;
     core.setOutput("score", JSON.stringify(performance.score));
