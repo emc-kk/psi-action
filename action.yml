@@ -13,6 +13,23 @@ inputs:
     description: "Strategy to use when analyzing the page (mobile/desktop)."
   key:
     description: "A PageSpeed Insights API key"
+outputs:
+  score:
+    description: "Performance score of a given URL"
+  fcp:
+    description: "FCP score of a given URL"
+  tti:
+    description: "TTI score of a given URL"
+  si:
+    description: "SI score of a given URL"
+  tbt:
+    description: "TBT score of a given URL"
+  lcp:
+    description: "LCP score of a given URL"
+  cls:
+    description: "CLS score of a given URL"
+  fmp:
+    description: "FMP score of a given URL"
 runs:
   using: "node12"
   main: "index.js"
