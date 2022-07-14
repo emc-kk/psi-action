@@ -96,13 +96,15 @@ module.exports = (parameters, response) => {
     const threshold = getThreshold(parameters.threshold);
     const {lighthouseResult, loadingExperience = {}, id} = response;
 
-    console.log(renderer(
+    const results = renderer(
       overview(humanizeUrl(id), parameters.strategy, lighthouseResult),
       fieldData(loadingExperience.metrics),
       labData(lighthouseResult),
       opportunities(lighthouseResult, parameters.links),
       threshold
-    ));
+    );
+
+    console.log(results);
 
     const score = convertToPercentum(lighthouseResult.categories.performance.score);
     if (score < threshold) {
@@ -110,5 +112,7 @@ module.exports = (parameters, response) => {
       error.noStack = true;
       throw error;
     }
+
+    return results;
   });
 };
