@@ -15,6 +15,7 @@ const run = async () => {
     const strategy = core.getInput("strategy") || "mobile";
     // Output a formatted report to the terminal
     console.log(`Running Page Speed Insights for ${url}`);
+
     const output = await psi.output(url, {
       ...(key ? {key} : undefined),
       ...(key ? undefined : {nokey: "true"}),
@@ -23,10 +24,11 @@ const run = async () => {
       threshold
     });
 
-    core.setOutput("result-message", String(output));
+    console.log(output, "output");
+
+    core.setOutput("score", output);
   } catch (error) {
     core.setFailed(error.message);
-    core.setOutput("result-message", String(error.message));
   }
 };
 
