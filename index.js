@@ -40,6 +40,7 @@ const getCoreWebVitals = (refs) => {
     console.log(acc);
     if (coreWebVitalsTypes.includes(ref.acronym))
       acc[ref.acronym] = ref.weight;
+    return acc;
   }, {});
 }
 
