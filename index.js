@@ -28,7 +28,7 @@ const run = async () => {
 
 
     const performance = output.data.lighthouseResult.categories.performance;
-    core.setOutput("score", JSON.stringify(output.data.lighthouseResult.categories));
+    core.setOutput("score", JSON.stringify(output.data.lighthouseResult));
     const coreWebVitals = getCoreWebVitals(performance.auditRefs);
     setCoreWebVitals(coreWebVitals);
   } catch (error) {
