@@ -1,4 +1,4 @@
-on: [push]
+on: [pull_request]
 
 jobs:
   run_psi:
@@ -14,3 +14,14 @@ jobs:
           url: "https://jake.partus.ch"
           threshold: 85
           strategy: mobile
+      - name: Output Message 
+        run: echo ${{ steps.psi.outputs.result-message }}
+      - name: Comment PSI Outputs
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            **PSI Result: **
+            `${{ steps.psi.outputs.result-message }}`
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          allow-repeats: false
