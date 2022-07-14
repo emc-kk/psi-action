@@ -22,3 +22,6 @@ jobs:
           message: |
             **PSI Result: **
             `${{ steps.psi.outputs.result-message }}`
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          allow-repeats: false
