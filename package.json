@@ -12,6 +12,6 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
-    "psi": "^4.1.0"
+    "@emc-kk/psi": "^4.1.0"
   }
 }
