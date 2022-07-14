@@ -15,4 +15,10 @@ jobs:
           threshold: 85
           strategy: mobile
       - name: Output Message 
-        run: echo ${{ steps.create-message.outputs.result-message }}
+        run: echo ${{ steps.psi.outputs.result-message }}
+      - name: Comment PSI Outputs
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            **PSI Result: **
+            `${{ steps.psi.outputs.result-message }}`
