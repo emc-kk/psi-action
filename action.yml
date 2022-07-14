@@ -14,7 +14,7 @@ inputs:
   key:
     description: "A PageSpeed Insights API key"
 outputs:
-  result-message:
+  message:
     description: 'Output Message'
 runs:
   using: "node12"

@@ -15,13 +15,13 @@ jobs:
           threshold: 85
           strategy: mobile
       - name: Output Message 
-        run: echo ${{ steps.psi.outputs.result-message }}
+        run: echo ${{ steps.psi.outputs.message }}
       - name: Comment PSI Outputs
         uses: mshick/add-pr-comment@v1
         with:
           message: |
             **PSI Result: **
-            `${{ steps.psi.outputs.result-message }}`
+            `${{ steps.psi.outputs.message }}`
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false
