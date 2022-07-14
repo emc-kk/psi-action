@@ -19,7 +19,7 @@ jobs:
         with:
           message: |
             **PSI performance results: **
-            `${{ steps.psi.outputs.score }}`
+            ${{ steps.psi.outputs.score }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false
