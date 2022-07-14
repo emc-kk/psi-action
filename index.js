@@ -1,8 +1,6 @@
 const core = require("@actions/core");
 const psi = require("psi");
 
-const coreWebVitalsTypes = ["FCP", "TTI", "SI", "TBT", "LCP", "CLS", "FMP"];
-
 const run = async () => {
   try {
     const url = core.getInput("url");
@@ -26,26 +24,12 @@ const run = async () => {
       threshold
     });
 
+    console.log(output, "output");
 
     core.setOutput("score", output);
   } catch (error) {
     core.setFailed(error.message);
   }
 };
-
-const getCoreWebVitals = (refs) => {
-  return refs.reduce((acc, ref, _) => {
-    console.log(ref);
-    console.log(acc);
-    if (coreWebVitalsTypes.includes(ref.acronym))
-      acc[ref.acronym] = ref.weight;
-    return acc;
-  }, {});
-}
-
-const setCoreWebVitals = (coreWebVitals) => {
-  for (const type of coreWebVitalsTypes) 
-      core.setOutput(type.toLowerCase(), JSON.stringify(coreWebVitals[type]));
-}
 
 run();
