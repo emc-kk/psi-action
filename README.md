@@ -37,6 +37,7 @@ steps:
     id: psi
     with:
       url: "https://jake.partus.ch"
+      urls: "https://jake.partus.ch,https://google.com"
       threshold: 70
       strategy: mobile
       key: ${{ secrets.APIKEY }}
