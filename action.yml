@@ -6,7 +6,8 @@ branding:
 inputs:
   url:
     description: "The URL to run the check against"
-    required: true
+  urls:
+    description: "The URLs to run the check against"
   threshold:
     description: "Score to pass the PageSpeed test. Useful for setting a performance budget (default 70)."
   strategy:
