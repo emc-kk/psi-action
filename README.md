@@ -10,6 +10,10 @@ This action utilizes [Google's Page Speed Insights](https://developers.google.co
 
 **Required** The name of the site to reach `https://google.com`
 
+### `urls`
+
+**Optional** The name of the site to reach `https://google.com,https://yahoo.com`
+
 ### `key`
 
 Optional - API key (recommended for production) to use when consuming the Page Speed Insights API. This should be stored as a [Github Secret](https://docs.github.com/en/actions/reference/encrypted-secrets). You can request a key [here](https://developers.google.com/speed/docs/insights/v5/get-started)
